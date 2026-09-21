@@ -15,25 +15,25 @@ export default function Footer() {
   ];
 
   const serviceLinks = [
-    { name: 'Physiotherapy at Home', href: '#/physiotherapy-at-home' },
-    { name: 'Back Pain Physiotherapy', href: '#/back-pain-physiotherapy' },
-    { name: 'Neck Pain Physiotherapy', href: '#/neck-pain-physiotherapy' },
-    { name: 'Knee Pain Physiotherapy', href: '#/knee-pain-physiotherapy' },
-    { name: 'Sports Injury Physiotherapy', href: '#/sports-injury-physiotherapy' },
-    { name: 'Post-Surgery Rehabilitation', href: '#/post-surgery-rehabilitation' },
-    { name: 'Elderly / Mobility Therapy', href: '#/elderly-mobility-physiotherapy' },
-    { name: 'Home Visit Physiotherapy', href: '#/home-visit-physiotherapy' },
+    { name: 'Physiotherapy at Home', href: '/physiotherapy-at-home' },
+    { name: 'Back Pain Physiotherapy', href: '/back-pain-physiotherapy' },
+    { name: 'Neck Pain Physiotherapy', href: '/neck-pain-physiotherapy' },
+    { name: 'Knee Pain Physiotherapy', href: '/knee-pain-physiotherapy' },
+    { name: 'Sports Injury Physiotherapy', href: '/sports-injury-physiotherapy' },
+    { name: 'Post-Surgery Rehabilitation', href: '/post-surgery-rehabilitation' },
+    { name: 'Elderly / Mobility Therapy', href: '/elderly-mobility-physiotherapy' },
+    { name: 'Home Visit Physiotherapy', href: '/home-visit-physiotherapy' },
   ];
 
   const locationLinks = [
-    { name: 'Noida Home Therapy', href: '#/noida' },
-    { name: 'Greater Noida Home Therapy', href: '#/greater-noida' },
-    { name: 'Ghaziabad Home Therapy', href: '#/ghaziabad' },
+    { name: 'Noida Home Therapy', href: '/noida' },
+    { name: 'Greater Noida Home Therapy', href: '/greater-noida' },
+    { name: 'Ghaziabad Home Therapy', href: '/ghaziabad' },
   ];
 
   const handleScrollTo = (e, targetId) => {
-    if (targetId.startsWith('#/')) {
-      return; // hash route navigation handles it
+    if (targetId.startsWith('/')) {
+      return;
     }
     e.preventDefault();
     const element = document.querySelector(targetId);

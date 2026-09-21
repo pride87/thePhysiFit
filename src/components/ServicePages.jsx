@@ -164,7 +164,7 @@ export default function ServicePages({ serviceKey, onNavigateBack }) {
     }
     const canonicalTag = document.querySelector('link[rel="canonical"]');
     if (canonicalTag) {
-      canonicalTag.setAttribute('href', `https://thephysifit.com/#/${serviceKey}`);
+      canonicalTag.setAttribute('href', `https://thephysifit.com/${serviceKey}`);
     }
     window.scrollTo(0, 0);
   }, [serviceKey, data]);
@@ -186,11 +186,10 @@ export default function ServicePages({ serviceKey, onNavigateBack }) {
         {/* Navigation Top Bar */}
         <div className="flex items-center justify-between">
           <a
-            href="#"
+            href="/"
             onClick={(e) => {
               e.preventDefault();
               if (onNavigateBack) onNavigateBack();
-              window.location.hash = '';
             }}
             className="inline-flex items-center space-x-2 text-sm font-semibold text-teal-700 hover:text-teal-900 bg-white px-4 py-2 rounded-xl border border-slate-200 shadow-sm transition-all"
           >
@@ -280,9 +279,9 @@ export default function ServicePages({ serviceKey, onNavigateBack }) {
             Our qualified physiotherapists provide {data.h1.toLowerCase()} across all sectors of Noida, Greater Noida West (Noida Extension), Indirapuram, Vaishali, Vasundhara, and Ghaziabad localities.
           </p>
           <div className="flex flex-wrap gap-2 text-xs font-semibold pt-2">
-            <a href="#/noida" className="bg-teal-950 px-3 py-1.5 rounded-lg border border-teal-700 hover:text-teal-300">Noida Home Therapy</a>
-            <a href="#/greater-noida" className="bg-teal-950 px-3 py-1.5 rounded-lg border border-teal-700 hover:text-teal-300">Greater Noida Home Therapy</a>
-            <a href="#/ghaziabad" className="bg-teal-950 px-3 py-1.5 rounded-lg border border-teal-700 hover:text-teal-300">Ghaziabad Home Therapy</a>
+            <a href="/noida" className="bg-teal-950 px-3 py-1.5 rounded-lg border border-teal-700 hover:text-teal-300">Noida Home Therapy</a>
+            <a href="/greater-noida" className="bg-teal-950 px-3 py-1.5 rounded-lg border border-teal-700 hover:text-teal-300">Greater Noida Home Therapy</a>
+            <a href="/ghaziabad" className="bg-teal-950 px-3 py-1.5 rounded-lg border border-teal-700 hover:text-teal-300">Ghaziabad Home Therapy</a>
           </div>
         </div>
 

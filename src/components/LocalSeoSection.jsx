@@ -13,19 +13,19 @@ export default function LocalSeoSection() {
   const locations = [
     {
       name: "Noida",
-      route: "#/noida",
+      route: "/noida",
       desc: "Prompt home visit physiotherapy across Sectors 15, 18, 50, 62, 75, 76, 128, 137, Expressway & surrounding areas.",
       highlights: ["Back & Neck Care", "Senior Mobility", "Post-Op Rehab"]
     },
     {
       name: "Greater Noida",
-      route: "#/greater-noida",
+      route: "/greater-noida",
       desc: "Doorstep physiotherapy in Greater Noida West (Noida Extension), Alpha, Beta, Gamma, Omega & Knowledge Park.",
       highlights: ["Joint Stiffness", "Knee Rehab", "Sports Injury Care"]
     },
     {
       name: "Ghaziabad",
-      route: "#/ghaziabad",
+      route: "/ghaziabad",
       desc: "Certified home visit therapy in Indirapuram, Vaishali, Vasundhara, Raj Nagar Extension & Crossings Republik.",
       highlights: ["Elderly Care", "Pain Relief", "Home Visit Physio"]
     }

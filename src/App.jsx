@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import WeComeToYou from './components/WeComeToYou';
@@ -21,34 +22,92 @@ import LocationPages from './components/LocationPages';
 import ServicePages from './components/ServicePages';
 import MobileStickyCallBar from './components/MobileStickyCallBar';
 
-const LOCATION_ROUTES = ['noida', 'greater-noida', 'ghaziabad'];
-const SERVICE_ROUTES = [
-  'physiotherapy-at-home',
-  'back-pain-physiotherapy',
-  'neck-pain-physiotherapy',
-  'knee-pain-physiotherapy',
-  'sports-injury-physiotherapy',
-  'post-surgery-rehabilitation',
-  'elderly-mobility-physiotherapy',
-  'home-visit-physiotherapy'
-];
+function HomePage() {
+  return (
+    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-teal-500 selection:text-white pb-16 md:pb-0">
+      <Navbar />
+      <Hero />
+      <PromotionalBanners type={1} />
+      <WeComeToYou />
+      <LocalSeoSection />
+      <Services />
+      <PromotionalBanners type={3} />
+      <Conditions />
+      <WhoCanBenefit />
+      <HowItWorks />
+      <PromotionalBanners type={2} />
+      <Pricing />
+      <AppointmentForm />
+      <WhyChooseUs />
+      <About />
+      <Testimonials />
+      <FAQ />
+      <Contact />
+      <PromotionalBanners type={4} />
+      <Footer />
+      <FloatingWhatsApp />
+      <MobileStickyCallBar />
+    </div>
+  );
+}
+
+function LocationRouteWrapper({ locationKey }) {
+  const navigate = useNavigate();
+  return (
+    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-teal-500 selection:text-white pb-16">
+      <Navbar />
+      <LocationPages locationKey={locationKey} onNavigateBack={() => navigate('/')} />
+      <Footer />
+      <FloatingWhatsApp />
+      <MobileStickyCallBar />
+    </div>
+  );
+}
+
+function ServiceRouteWrapper({ serviceKey }) {
+  const navigate = useNavigate();
+  return (
+    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-teal-500 selection:text-white pb-16">
+      <Navbar />
+      <ServicePages serviceKey={serviceKey} onNavigateBack={() => navigate('/')} />
+      <Footer />
+      <FloatingWhatsApp />
+      <MobileStickyCallBar />
+    </div>
+  );
+}
+
+function NotFoundPage() {
+  const navigate = useNavigate();
+  return (
+    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans flex flex-col justify-between">
+      <Navbar />
+      <div className="max-w-xl mx-auto px-4 py-20 text-center space-y-6">
+        <div className="w-16 h-16 bg-teal-100 text-teal-700 rounded-2xl flex items-center justify-center mx-auto text-2xl font-bold">
+          404
+        </div>
+        <h1 className="text-3xl font-extrabold text-slate-900">Page Not Found</h1>
+        <p className="text-slate-600 text-sm">
+          The page or service you are looking for is unavailable. Explore our home physiotherapy services across Noida, Greater Noida, and Ghaziabad.
+        </p>
+        <button
+          onClick={() => navigate('/')}
+          className="inline-block bg-teal-600 hover:bg-teal-700 text-white font-bold px-6 py-3 rounded-xl shadow transition-all text-sm cursor-pointer"
+        >
+          Return to Homepage
+        </button>
+      </div>
+      <Footer />
+      <MobileStickyCallBar />
+    </div>
+  );
+}
 
 export default function App() {
-  const [currentHash, setCurrentHash] = useState(window.location.hash);
+  const location = useLocation();
 
   useEffect(() => {
-    const handleHashChange = () => {
-      setCurrentHash(window.location.hash);
-    };
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
-  }, []);
-
-  const routeKey = currentHash.replace(/^#\/?/, '');
-
-  // Reset metadata when returning to home
-  useEffect(() => {
-    if (!routeKey || (!LOCATION_ROUTES.includes(routeKey) && !SERVICE_ROUTES.includes(routeKey))) {
+    if (location.pathname === '/') {
       document.title = 'ThePhysiFit | Home Physiotherapy in Noida, Greater Noida & Ghaziabad';
       const metaDesc = document.querySelector('meta[name="description"]');
       if (metaDesc) {
@@ -56,135 +115,33 @@ export default function App() {
       }
       const canonicalTag = document.querySelector('link[rel="canonical"]');
       if (canonicalTag) {
-        canonicalTag.setAttribute('href', 'https://thephysifit.com');
+        canonicalTag.setAttribute('href', 'https://thephysifit.com/');
       }
     }
-  }, [routeKey]);
+  }, [location.pathname]);
 
-  // Handle Location subpage routing
-  if (LOCATION_ROUTES.includes(routeKey)) {
-    return (
-      <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-teal-500 selection:text-white pb-16">
-        <Navbar />
-        <LocationPages locationKey={routeKey} onNavigateBack={() => window.location.hash = ''} />
-        <Footer />
-        <FloatingWhatsApp />
-        <MobileStickyCallBar />
-      </div>
-    );
-  }
-
-  // Handle Service subpage routing
-  if (SERVICE_ROUTES.includes(routeKey)) {
-    return (
-      <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-teal-500 selection:text-white pb-16">
-        <Navbar />
-        <ServicePages serviceKey={routeKey} onNavigateBack={() => window.location.hash = ''} />
-        <Footer />
-        <FloatingWhatsApp />
-        <MobileStickyCallBar />
-      </div>
-    );
-  }
-
-  // Handle 404 fallback for unknown hash routes starting with /
-  if (currentHash.startsWith('#/') && routeKey && !LOCATION_ROUTES.includes(routeKey) && !SERVICE_ROUTES.includes(routeKey)) {
-    return (
-      <div className="min-h-screen bg-slate-50 text-slate-900 font-sans flex flex-col justify-between">
-        <Navbar />
-        <div className="max-w-xl mx-auto px-4 py-20 text-center space-y-6">
-          <div className="w-16 h-16 bg-teal-100 text-teal-700 rounded-2xl flex items-center justify-center mx-auto text-2xl font-bold">
-            404
-          </div>
-          <h1 className="text-3xl font-extrabold text-slate-900">Page Not Found</h1>
-          <p className="text-slate-600 text-sm">
-            The page or service you are looking for is unavailable. Explore our home physiotherapy services across Noida, Greater Noida, and Ghaziabad.
-          </p>
-          <a
-            href="#"
-            onClick={(e) => {
-              e.preventDefault();
-              window.location.hash = '';
-            }}
-            className="inline-block bg-teal-600 hover:bg-teal-700 text-white font-bold px-6 py-3 rounded-xl shadow transition-all text-sm"
-          >
-            Return to Homepage
-          </a>
-        </div>
-        <Footer />
-        <MobileStickyCallBar />
-      </div>
-    );
-  }
-
-  // Main Homepage Layout
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-teal-500 selection:text-white pb-16 md:pb-0">
-      {/* Sticky Header Navigation */}
-      <Navbar />
+    <Routes>
+      {/* Homepage */}
+      <Route path="/" element={<HomePage />} />
 
-      {/* Hero Section with H1 */}
-      <Hero />
+      {/* Location Pages */}
+      <Route path="/noida" element={<LocationRouteWrapper locationKey="noida" />} />
+      <Route path="/greater-noida" element={<LocationRouteWrapper locationKey="greater-noida" />} />
+      <Route path="/ghaziabad" element={<LocationRouteWrapper locationKey="ghaziabad" />} />
 
-      {/* Banner 1: Doorstep Physiotherapy */}
-      <PromotionalBanners type={1} />
+      {/* Service Pages */}
+      <Route path="/physiotherapy-at-home" element={<ServiceRouteWrapper serviceKey="physiotherapy-at-home" />} />
+      <Route path="/back-pain-physiotherapy" element={<ServiceRouteWrapper serviceKey="back-pain-physiotherapy" />} />
+      <Route path="/neck-pain-physiotherapy" element={<ServiceRouteWrapper serviceKey="neck-pain-physiotherapy" />} />
+      <Route path="/knee-pain-physiotherapy" element={<ServiceRouteWrapper serviceKey="knee-pain-physiotherapy" />} />
+      <Route path="/sports-injury-physiotherapy" element={<ServiceRouteWrapper serviceKey="sports-injury-physiotherapy" />} />
+      <Route path="/post-surgery-rehabilitation" element={<ServiceRouteWrapper serviceKey="post-surgery-rehabilitation" />} />
+      <Route path="/elderly-mobility-physiotherapy" element={<ServiceRouteWrapper serviceKey="elderly-mobility-physiotherapy" />} />
+      <Route path="/home-visit-physiotherapy" element={<ServiceRouteWrapper serviceKey="home-visit-physiotherapy" />} />
 
-      {/* We Come To You Section */}
-      <WeComeToYou />
-
-      {/* Local SEO Section: Noida, Greater Noida & Ghaziabad */}
-      <LocalSeoSection />
-
-      {/* Services Grid & Modal */}
-      <Services />
-
-      {/* Banner 3: Home Physiotherapy ₹700 */}
-      <PromotionalBanners type={3} />
-
-      {/* Conditions We Help With */}
-      <Conditions />
-
-      {/* Who Can Benefit */}
-      <WhoCanBenefit />
-
-      {/* 4-Step Process: How It Works */}
-      <HowItWorks />
-
-      {/* Banner 2: Your Recovery Starts at Home */}
-      <PromotionalBanners type={2} />
-
-      {/* Transparent Pricing */}
-      <Pricing />
-
-      {/* Main Appointment Booking Form */}
-      <AppointmentForm />
-
-      {/* Why Choose ThePhysiFit */}
-      <WhyChooseUs />
-
-      {/* About ThePhysiFit */}
-      <About />
-
-      {/* Testimonials */}
-      <Testimonials />
-
-      {/* Local FAQ Accordion */}
-      <FAQ />
-
-      {/* Contact Section */}
-      <Contact />
-
-      {/* Banner 4: Don't Let Pain Limit Your Life */}
-      <PromotionalBanners type={4} />
-
-      {/* Footer */}
-      <Footer />
-
-      {/* Floating WhatsApp Action Widget */}
-      <FloatingWhatsApp />
-
-      {/* Mobile Sticky Call CTA Bar */}
-      <MobileStickyCallBar />
-    </div>
+      {/* 404 Fallback */}
+      <Route path="*" element={<NotFoundPage />} />
+    </Routes>
   );
 }

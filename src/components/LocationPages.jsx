@@ -124,7 +124,7 @@ export default function LocationPages({ locationKey, onNavigateBack }) {
     }
     const canonicalTag = document.querySelector('link[rel="canonical"]');
     if (canonicalTag) {
-      canonicalTag.setAttribute('href', `https://thephysifit.com/#/${locationKey}`);
+      canonicalTag.setAttribute('href', `https://thephysifit.com/${locationKey}`);
     }
     window.scrollTo(0, 0);
   }, [locationKey, data]);
@@ -146,11 +146,10 @@ export default function LocationPages({ locationKey, onNavigateBack }) {
         {/* Navigation Top Bar */}
         <div className="flex items-center justify-between">
           <a
-            href="#"
+            href="/"
             onClick={(e) => {
               e.preventDefault();
               if (onNavigateBack) onNavigateBack();
-              window.location.hash = '';
             }}
             className="inline-flex items-center space-x-2 text-sm font-semibold text-teal-700 hover:text-teal-900 bg-white px-4 py-2 rounded-xl border border-slate-200 shadow-sm transition-all"
           >
