@@ -30,17 +30,15 @@ export default function FloatingWhatsApp() {
 
           <div className="space-y-2">
             <a
-              href="https://wa.me/919891050903?text=Hello%20ThePhysiFit%20Team,%20I%20would%20like%20to%20inquire%20about%20a%20home%20physiotherapy%20session."
-              target="_blank"
-              rel="noopener noreferrer"
+              href="tel:7065411520"
               onClick={() => setIsOpen(false)}
               className="w-full bg-emerald-600 hover:bg-emerald-700 text-white p-3 rounded-xl text-xs font-bold flex items-center justify-between shadow-md transition-colors"
             >
               <div className="flex items-center space-x-2">
-                <MessageSquare className="w-4 h-4" />
-                <span>WhatsApp 9891050903</span>
+                <PhoneCall className="w-4 h-4 fill-current" />
+                <span>Call Now: 7065411520</span>
               </div>
-              <ExternalLink className="w-3.5 h-3.5" />
+              <span className="text-[10px] bg-emerald-800/60 px-2 py-0.5 rounded font-medium">Call</span>
             </a>
 
             <a
@@ -52,9 +50,23 @@ export default function FloatingWhatsApp() {
             >
               <div className="flex items-center space-x-2">
                 <MessageSquare className="w-4 h-4" />
-                <span>WhatsApp 7065411520</span>
+                <span>WhatsApp 7065411520 (Primary)</span>
               </div>
               <ExternalLink className="w-3.5 h-3.5" />
+            </a>
+
+            <a
+              href="https://wa.me/919891050903?text=Hello%20ThePhysiFit%20Team,%20I%20would%20like%20to%20inquire%20about%20a%20home%20physiotherapy%20session."
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsOpen(false)}
+              className="w-full bg-slate-700 hover:bg-slate-800 text-slate-100 p-2.5 rounded-xl text-xs font-medium flex items-center justify-between transition-colors"
+            >
+              <div className="flex items-center space-x-2">
+                <MessageSquare className="w-3.5 h-3.5" />
+                <span>WhatsApp 9891050903 (Secondary)</span>
+              </div>
+              <ExternalLink className="w-3 h-3" />
             </a>
           </div>
 

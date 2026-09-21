@@ -191,32 +191,40 @@ export const HOW_IT_WORKS = [
 
 export const FAQS = [
   {
+    q: "Do you provide physiotherapy at home in Noida?",
+    a: "Yes, ThePhysiFit provides professional home visit physiotherapy sessions across all major sectors of Noida including Sector 15, 18, 50, 62, 75, 76, 128, 137, and Noida Expressway."
+  },
+  {
+    q: "Do you provide home physiotherapy in Greater Noida?",
+    a: "Yes, ThePhysiFit offers personalized home physiotherapy visits in Greater Noida and Greater Noida West (Noida Extension), Alpha, Beta, Gamma, Omega, and Knowledge Park."
+  },
+  {
+    q: "Do you provide physiotherapy home visits in Ghaziabad?",
+    a: "Yes, our certified physiotherapists visit homes across Ghaziabad including Indirapuram, Vaishali, Vasundhara, Raj Nagar Extension, and Crossings Republik."
+  },
+  {
+    q: "Can I book physiotherapy for back pain at home?",
+    a: "Yes, we specialize in home physiotherapy for acute lower back pain, disc stiffness, muscle spasms, and sciatica relief."
+  },
+  {
+    q: "Can I book physiotherapy for neck pain?",
+    a: "Yes, we provide home therapy sessions for cervical spondylosis, upper back tension, neck stiffness, and posture correction."
+  },
+  {
+    q: "How can I book a home physiotherapy session?",
+    a: "You can book directly by calling 7065411520 or by submitting our quick online appointment form to send a WhatsApp request."
+  },
+  {
+    q: "How do I contact ThePhysiFit?",
+    a: "Our primary contact number is 7065411520. You can call or text us via WhatsApp anytime to confirm physiotherapist availability."
+  },
+  {
     q: "Do you have a physical clinic?",
-    a: "No. ThePhysiFit operates exclusively as a home physiotherapy service. Our licensed physiotherapists bring all necessary equipment and treatment tools directly to your home."
+    a: "No. ThePhysiFit operates exclusively as a home visit physiotherapy service. We bring clinical expertise and equipment directly to your residence."
   },
   {
-    q: "Where do you provide home visits?",
-    a: "ThePhysiFit currently serves Noida, Delhi NCR, and Ghaziabad. Exact service availability depends on your specific locality within these cities."
-  },
-  {
-    q: "How much is a session?",
-    a: "The listed fee for a comprehensive home physiotherapy session is ₹700 per session. There are no hidden charges."
-  },
-  {
-    q: "How can I book an appointment?",
-    a: "Fill out our quick appointment request form on this website and click 'Continue to WhatsApp'. Send the pre-filled message to our team, and we will confirm the nearest available slot."
-  },
-  {
-    q: "Is online payment available on this website?",
-    a: "No online payment is required or collected through this website. Payment arrangements can be confirmed directly with the ThePhysiFit team at the time of your home visit."
-  },
-  {
-    q: "Is my appointment automatically confirmed after filling the form?",
-    a: "No. The WhatsApp message serves as your appointment request. The ThePhysiFit team will review your preferred date/time, confirm physiotherapist availability in your area, and finalize the booking via WhatsApp."
-  },
-  {
-    q: "What should I keep ready for the home physiotherapy session?",
-    a: "Please ensure a quiet, comfortable space with adequate room for stretching or a bed/couch, and wear loose, comfortable clothing suitable for movement evaluation."
+    q: "How much does a home session cost?",
+    a: "Our fee is ₹700 per comprehensive home physiotherapy session with zero hidden charges or extra travel fees."
   }
 ];
 

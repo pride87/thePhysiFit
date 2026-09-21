@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { CONDITIONS, SERVICES } from '../data/physioData';
 import WhatsAppModal from './WhatsAppModal';
-import { User, Phone, MapPin, Calendar, Clock, Activity, MessageSquare, CheckCircle2, ShieldCheck, AlertCircle } from 'lucide-react';
+import { User, MapPin, Calendar, Clock, MessageSquare, CheckCircle2, ShieldCheck, AlertCircle } from 'lucide-react';
 
 export default function AppointmentForm() {
   const [formData, setFormData] = useState({
@@ -13,12 +12,8 @@ export default function AppointmentForm() {
     area: '',
     city: 'Noida',
     pincode: '',
-    condition: 'Back Pain',
-    therapy: 'Orthopedic Physiotherapy',
-    patientType: 'New Patient',
     preferredDate: '',
     preferredTime: 'Morning (9 AM - 12 PM)',
-    symptoms: '',
     agreeConsent: false
   });
 
@@ -74,18 +69,12 @@ Area: ${formData.area}
 City: ${formData.city}
 Pincode: ${formData.pincode}
 
-APPOINTMENT
-Condition: ${formData.condition}
-Therapy: ${formData.therapy}
+APPOINTMENT TIME
 Preferred Date: ${formData.preferredDate}
 Preferred Time: ${formData.preferredTime}
-Patient Status: ${formData.patientType}
 
 SESSION FEE
 ₹700 per session
-
-ADDITIONAL INFORMATION
-${formData.symptoms.trim() ? formData.symptoms : 'None provided'}
 
 Please confirm home visit availability and appointment details.
 
@@ -171,7 +160,7 @@ ThePhysiFit`;
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="e.g. 98100XXXXX"
+                    placeholder="e.g. 7065411520"
                     className={`w-full px-4 py-3 bg-slate-50 border ${errors.phone ? 'border-rose-500' : 'border-slate-200'} rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:bg-white transition-all`}
                   />
                   {errors.phone && <p className="text-xs text-rose-500 mt-1">{errors.phone}</p>}
@@ -324,87 +313,6 @@ ThePhysiFit`;
               </div>
             </div>
 
-            {/* Section 3: Treatment Details */}
-            <div className="space-y-4">
-              <div className="flex items-center space-x-2 border-b border-slate-200 pb-2 text-teal-700 font-bold text-lg">
-                <Activity className="w-5 h-5 text-teal-600" />
-                <h3>3. Treatment & Health Info</h3>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                
-                {/* Select Condition */}
-                <div>
-                  <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
-                    Select Main Condition
-                  </label>
-                  <select
-                    id="condition-select"
-                    name="condition"
-                    value={formData.condition}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:bg-white transition-all"
-                  >
-                    {CONDITIONS.map((cond) => (
-                      <option key={cond.id} value={cond.name}>{cond.name}</option>
-                    ))}
-                    <option value="Other Condition">Other Condition</option>
-                  </select>
-                </div>
-
-                {/* Select Therapy */}
-                <div>
-                  <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
-                    Select Preferred Therapy
-                  </label>
-                  <select
-                    id="therapy-select"
-                    name="therapy"
-                    value={formData.therapy}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:bg-white transition-all"
-                  >
-                    {SERVICES.map((serv) => (
-                      <option key={serv.id} value={serv.title}>{serv.title}</option>
-                    ))}
-                    <option value="General Home Assessment">General Home Assessment</option>
-                  </select>
-                </div>
-
-                {/* Patient Status */}
-                <div>
-                  <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
-                    Patient Status
-                  </label>
-                  <select
-                    name="patientType"
-                    value={formData.patientType}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:bg-white transition-all"
-                  >
-                    <option value="New Patient">New Patient (First Home Visit)</option>
-                    <option value="Existing Patient">Existing Patient (Follow-up Session)</option>
-                  </select>
-                </div>
-
-                {/* Symptoms / Notes */}
-                <div className="sm:col-span-2">
-                  <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
-                    Symptoms / Additional Information
-                  </label>
-                  <textarea
-                    name="symptoms"
-                    rows="3"
-                    value={formData.symptoms}
-                    onChange={handleChange}
-                    placeholder="Describe pain areas, duration, past surgeries, or mobility difficulties..."
-                    className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:bg-white transition-all"
-                  />
-                </div>
-
-              </div>
-            </div>
-
             {/* Checkbox Consent */}
             <div id="field-agreeConsent" className="pt-2">
               <label className="flex items-start space-x-3 cursor-pointer">
@@ -433,20 +341,20 @@ ThePhysiFit`;
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <button
                   type="button"
-                  onClick={() => handleSubmitWhatsApp('9891050903')}
-                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-4 rounded-xl font-bold text-sm shadow-lg shadow-emerald-600/20 flex items-center justify-center space-x-2 transition-all hover:-translate-y-0.5"
-                >
-                  <MessageSquare className="w-5 h-5" />
-                  <span>Continue on WhatsApp 9891050903</span>
-                </button>
-
-                <button
-                  type="button"
                   onClick={() => handleSubmitWhatsApp('7065411520')}
                   className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-4 rounded-xl font-bold text-sm shadow-lg shadow-emerald-600/20 flex items-center justify-center space-x-2 transition-all hover:-translate-y-0.5"
                 >
                   <MessageSquare className="w-5 h-5" />
                   <span>Continue on WhatsApp 7065411520</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => handleSubmitWhatsApp('9891050903')}
+                  className="w-full bg-slate-700 hover:bg-slate-800 text-white py-4 rounded-xl font-bold text-sm shadow-lg shadow-slate-700/20 flex items-center justify-center space-x-2 transition-all hover:-translate-y-0.5"
+                >
+                  <MessageSquare className="w-5 h-5" />
+                  <span>Continue on WhatsApp 9891050903</span>
                 </button>
               </div>
 

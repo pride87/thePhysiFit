@@ -96,15 +96,21 @@ export default function PromotionalBanners({ type = 1 }) {
         <p className="text-slate-300 text-base max-w-xl mx-auto">
           Get expert physiotherapy support in the comfort of your home with ThePhysiFit.
         </p>
-        <div className="pt-2 flex justify-center space-x-4">
+        <div className="pt-2 flex flex-col sm:flex-row justify-center items-center gap-3">
           <a
-            href="https://wa.me/919891050903"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="tel:7065411520"
             className="bg-emerald-600 hover:bg-emerald-700 text-white px-7 py-3.5 rounded-xl font-bold text-sm shadow-lg flex items-center space-x-2"
           >
+            <span>Call Now — 7065411520</span>
+          </a>
+          <a
+            href="https://wa.me/917065411520"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-teal-600 hover:bg-teal-500 text-white px-7 py-3.5 rounded-xl font-bold text-sm shadow-lg flex items-center space-x-2"
+          >
             <MessageSquare className="w-4 h-4" />
-            <span>Talk to ThePhysiFit</span>
+            <span>Chat on WhatsApp</span>
           </a>
         </div>
       </div>

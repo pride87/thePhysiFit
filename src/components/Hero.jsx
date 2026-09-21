@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, MapPin, IndianRupee, MessageSquare, ArrowRight, ShieldCheck, CheckCircle2, Clock } from 'lucide-react';
+import { Home, MapPin, IndianRupee, MessageSquare, ArrowRight, ShieldCheck, CheckCircle2, Phone } from 'lucide-react';
 
 export default function Hero() {
   const scrollToAppointment = (e) => {
@@ -27,20 +27,20 @@ export default function Hero() {
               <span className="w-2 h-2 rounded-full bg-teal-600 animate-pulse" />
               <span>Doorstep Physiotherapy Services</span>
               <span className="text-teal-400">•</span>
-              <span className="text-teal-900 font-bold">Noida • Delhi NCR • Ghaziabad</span>
+              <span className="text-teal-900 font-bold">Noida • Greater Noida • Ghaziabad</span>
             </div>
 
-            {/* Main Headline */}
+            {/* Main Headline - Single H1 tag */}
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
-              Professional Physiotherapy.{' '}
+              Home Physiotherapy in{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 via-teal-700 to-emerald-600">
-                Right at Your Doorstep.
+                Noida, Greater Noida & Ghaziabad
               </span>
             </h1>
 
             {/* Supporting Text */}
             <p className="text-base sm:text-lg text-slate-600 max-w-2xl leading-relaxed">
-              Personalized physiotherapy and rehabilitation care delivered to your home across Noida, Delhi NCR and Ghaziabad. Enjoy expert care without the hassle of clinic travel.
+              ThePhysiFit provides personalized home physiotherapy sessions across Noida, Greater Noida, Ghaziabad, and Delhi NCR. We bring certified physical therapists directly to your doorstep for back pain, neck pain, knee rehab, sports injury rehabilitation, post-surgery recovery, and elderly mobility support.
             </p>
 
             {/* Info Badges Grid */}
@@ -87,24 +87,32 @@ export default function Hero() {
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 pt-3">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-3 pt-3">
               <a
-                href="#appointment"
-                onClick={scrollToAppointment}
-                className="bg-teal-600 hover:bg-teal-700 text-white px-7 py-4 rounded-xl font-bold text-base shadow-lg shadow-teal-600/30 hover:shadow-xl hover:shadow-teal-600/40 transition-all text-center flex items-center justify-center group"
+                href="tel:7065411520"
+                className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-4 rounded-xl font-bold text-base shadow-lg shadow-emerald-600/30 hover:shadow-xl transition-all text-center flex items-center justify-center space-x-2 group"
               >
-                <span>Book Home Appointment</span>
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                <Phone className="w-5 h-5 fill-current" />
+                <span>Call Now: 7065411520</span>
               </a>
 
               <a
-                href="https://wa.me/919891050903?text=Hello%20ThePhysiFit%20Team,%20I%20would%20like%20to%20inquire%20about%20a%20home%20physiotherapy%20session."
+                href="#appointment"
+                onClick={scrollToAppointment}
+                className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-4 rounded-xl font-bold text-base shadow-md shadow-teal-600/20 hover:shadow-lg transition-all text-center flex items-center justify-center group"
+              >
+                <span>Book Appointment</span>
+                <ArrowRight className="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform" />
+              </a>
+
+              <a
+                href="https://wa.me/917065411520?text=Hello%20ThePhysiFit%20Team,%20I%20would%20like%20to%20inquire%20about%20a%20home%20physiotherapy%20session."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-4 rounded-xl font-bold text-base shadow-md shadow-emerald-600/20 transition-all text-center flex items-center justify-center"
+                className="bg-slate-900 hover:bg-slate-800 text-white px-5 py-4 rounded-xl font-bold text-base shadow-md transition-all text-center flex items-center justify-center"
               >
-                <MessageSquare className="w-5 h-5 mr-2" />
-                <span>Chat on WhatsApp</span>
+                <MessageSquare className="w-5 h-5 mr-1.5 text-emerald-400" />
+                <span>WhatsApp</span>
               </a>
             </div>
 
