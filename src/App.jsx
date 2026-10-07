@@ -127,18 +127,41 @@ export default function App() {
 
       {/* Location Pages */}
       <Route path="/noida" element={<LocationRouteWrapper locationKey="noida" />} />
+      <Route path="/noida/" element={<LocationRouteWrapper locationKey="noida" />} />
+
+      <Route path="/noida/ghaziabad" element={<LocationRouteWrapper locationKey="noida-ghaziabad" />} />
+      <Route path="/noida/ghaziabad/" element={<LocationRouteWrapper locationKey="noida-ghaziabad" />} />
+
       <Route path="/greater-noida" element={<LocationRouteWrapper locationKey="greater-noida" />} />
+      <Route path="/greater-noida/" element={<LocationRouteWrapper locationKey="greater-noida" />} />
+
       <Route path="/ghaziabad" element={<LocationRouteWrapper locationKey="ghaziabad" />} />
+      <Route path="/ghaziabad/" element={<LocationRouteWrapper locationKey="ghaziabad" />} />
 
       {/* Service Pages */}
       <Route path="/physiotherapy-at-home" element={<ServiceRouteWrapper serviceKey="physiotherapy-at-home" />} />
+      <Route path="/physiotherapy-at-home/" element={<ServiceRouteWrapper serviceKey="physiotherapy-at-home" />} />
+
       <Route path="/back-pain-physiotherapy" element={<ServiceRouteWrapper serviceKey="back-pain-physiotherapy" />} />
+      <Route path="/back-pain-physiotherapy/" element={<ServiceRouteWrapper serviceKey="back-pain-physiotherapy" />} />
+
       <Route path="/neck-pain-physiotherapy" element={<ServiceRouteWrapper serviceKey="neck-pain-physiotherapy" />} />
+      <Route path="/neck-pain-physiotherapy/" element={<ServiceRouteWrapper serviceKey="neck-pain-physiotherapy" />} />
+
       <Route path="/knee-pain-physiotherapy" element={<ServiceRouteWrapper serviceKey="knee-pain-physiotherapy" />} />
+      <Route path="/knee-pain-physiotherapy/" element={<ServiceRouteWrapper serviceKey="knee-pain-physiotherapy" />} />
+
       <Route path="/sports-injury-physiotherapy" element={<ServiceRouteWrapper serviceKey="sports-injury-physiotherapy" />} />
+      <Route path="/sports-injury-physiotherapy/" element={<ServiceRouteWrapper serviceKey="sports-injury-physiotherapy" />} />
+
       <Route path="/post-surgery-rehabilitation" element={<ServiceRouteWrapper serviceKey="post-surgery-rehabilitation" />} />
+      <Route path="/post-surgery-rehabilitation/" element={<ServiceRouteWrapper serviceKey="post-surgery-rehabilitation" />} />
+
       <Route path="/elderly-mobility-physiotherapy" element={<ServiceRouteWrapper serviceKey="elderly-mobility-physiotherapy" />} />
+      <Route path="/elderly-mobility-physiotherapy/" element={<ServiceRouteWrapper serviceKey="elderly-mobility-physiotherapy" />} />
+
       <Route path="/home-visit-physiotherapy" element={<ServiceRouteWrapper serviceKey="home-visit-physiotherapy" />} />
+      <Route path="/home-visit-physiotherapy/" element={<ServiceRouteWrapper serviceKey="home-visit-physiotherapy" />} />
 
       {/* 404 Fallback */}
       <Route path="*" element={<NotFoundPage />} />

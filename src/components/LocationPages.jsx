@@ -109,6 +109,42 @@ const LOCATION_DATA = {
         a: "Call 7065411520 or complete our quick online appointment form to send a WhatsApp message to our scheduling team."
       }
     ]
+  },
+  'noida-ghaziabad': {
+    name: "Noida & Ghaziabad",
+    title: "Home Physiotherapy in Noida & Ghaziabad | Doorstep Physio | ThePhysiFit",
+    metaDesc: "Book certified home physiotherapy in Noida & Ghaziabad with ThePhysiFit. We provide doorstep physio sessions for back pain, neck pain, knee rehab & post-surgery. Call 7065411520.",
+    h1: "Home Physiotherapy Services in Noida & Ghaziabad",
+    subheading: "Professional doorstep physiotherapy and rehabilitation across all major sectors of Noida & Ghaziabad.",
+    intro: "ThePhysiFit offers personalized home visit physiotherapy services across Noida and Ghaziabad. Whether you reside in Noida Sectors 15, 18, 50, 62, 75, 137 or Indirapuram, Vaishali, Vasundhara, and Raj Nagar Extension in Ghaziabad, our qualified physical therapists visit your residence with treatment tools and equipment.",
+    coverage: [
+      "Noida Sector 15, 18, 50, 62, 75, 76, 128, 137 & Expressway",
+      "Indirapuram (Ahinsa Khand, Vaibhav Khand, Niti Khand, Nyay Khand)",
+      "Vaishali, Vasundhara & Raj Nagar Extension",
+      "Greater Noida West & surrounding residential societies"
+    ],
+    services: [
+      "Back Pain & Sciatica Therapy at Home",
+      "Cervical & Neck Strain Physiotherapy",
+      "Knee Pain & Osteoarthritis Management",
+      "Post-Surgery Joint Rehabilitation",
+      "Elderly Mobility & Balance Support",
+      "Sports Injury Care & Athletic Rehab"
+    ],
+    faqs: [
+      {
+        q: "Do you provide home physiotherapy in both Noida and Ghaziabad?",
+        a: "Yes, ThePhysiFit provides certified home visit physiotherapy sessions across all sectors of Noida and Ghaziabad. Call 7065411520 to book."
+      },
+      {
+        q: "How much does a home physiotherapy session cost in Noida and Ghaziabad?",
+        a: "Each comprehensive home visit session is ₹700 flat, including assessment and treatment."
+      },
+      {
+        q: "How quickly can a physiotherapist visit my home?",
+        a: "Same-day or next-day appointments are available depending on slot availability. Call 7065411520 or book via WhatsApp."
+      }
+    ]
   }
 };
 
@@ -124,7 +160,8 @@ export default function LocationPages({ locationKey, onNavigateBack }) {
     }
     const canonicalTag = document.querySelector('link[rel="canonical"]');
     if (canonicalTag) {
-      canonicalTag.setAttribute('href', `https://thephysifit.com/${locationKey}`);
+      const canonicalPath = locationKey === 'noida-ghaziabad' ? 'noida/ghaziabad/' : `${locationKey}/`;
+      canonicalTag.setAttribute('href', `https://thephysifit.com/${canonicalPath}`);
     }
     window.scrollTo(0, 0);
   }, [locationKey, data]);

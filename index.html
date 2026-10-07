@@ -8,7 +8,22 @@
     <meta name="description" content="ThePhysiFit provides professional home physiotherapy in Noida, Greater Noida and Ghaziabad. Book a home visit for back pain, neck pain, knee pain, sports injuries and rehabilitation. Call 7065411520." />
     <meta name="keywords" content="Physiotherapy at home near me, Best Physiotherapy in Greater Noida, Best Physiotherapy in Noida, Physiotherapy near me, Physiotherapy for neck pain, Physiotherapy for back pain near me, Home visit Physiotherapy, Physiotherapy nearby me, Home physiotherapist near me, Physiotherapist at home in Noida, Home physiotherapy Greater Noida, Home physiotherapy Ghaziabad" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://thephysifit.com" />
+    <link rel="canonical" href="https://thephysifit.com/" />
+    
+    <!-- GitHub Pages SPA Redirect Handler -->
+    <script type="text/javascript">
+      (function(l) {
+        if (l.search[1] === 'p') {
+          var params = new URLSearchParams(l.search);
+          var p = params.get('p');
+          var h = params.get('h');
+          if (p) {
+            var cleanPath = '/' + p.replace(/^\//, '');
+            window.history.replaceState(null, null, cleanPath + (h ? '#' + h : ''));
+          }
+        }
+      }(window.location));
+    </script>
     
     <!-- OpenGraph / Social Media -->
     <meta property="og:type" content="website" />
