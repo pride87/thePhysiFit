@@ -26,9 +26,14 @@ export default function Footer() {
   ];
 
   const locationLinks = [
-    { name: 'Noida Home Therapy', href: '/noida/' },
-    { name: 'Noida & Ghaziabad Therapy', href: '/noida/ghaziabad/' },
-    { name: 'Greater Noida Home Therapy', href: '/greater-noida/' },
+    { name: 'All Service Locations', href: '/locations/' },
+    { name: 'Sector 50, Noida', href: '/physiotherapy-at-home-sector-50-noida/' },
+    { name: 'Sector 75, Noida', href: '/physiotherapy-at-home-sector-75-noida/' },
+    { name: 'Sector 93A, Noida', href: '/physiotherapy-at-home-sector-93a-noida/' },
+    { name: 'Sector 104, Noida', href: '/physiotherapy-at-home-sector-104-noida/' },
+    { name: 'Sector 137, Noida', href: '/physiotherapy-at-home-sector-137-noida/' },
+    { name: 'Noida (All Sectors)', href: '/noida/' },
+    { name: 'Greater Noida & Ext.', href: '/greater-noida/' },
     { name: 'Ghaziabad Home Therapy', href: '/ghaziabad/' },
   ];
 

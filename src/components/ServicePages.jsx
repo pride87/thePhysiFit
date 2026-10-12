@@ -279,10 +279,15 @@ export default function ServicePages({ serviceKey, onNavigateBack }) {
             Our qualified physiotherapists provide {data.h1.toLowerCase()} across all sectors of Noida, Greater Noida West (Noida Extension), Indirapuram, Vaishali, Vasundhara, and Ghaziabad localities.
           </p>
           <div className="flex flex-wrap gap-2 text-xs font-semibold pt-2">
-            <a href="/noida/" className="bg-teal-950 px-3 py-1.5 rounded-lg border border-teal-700 hover:text-teal-300">Noida Home Therapy</a>
-            <a href="/noida/ghaziabad/" className="bg-teal-950 px-3 py-1.5 rounded-lg border border-teal-700 hover:text-teal-300">Noida & Ghaziabad Therapy</a>
-            <a href="/greater-noida/" className="bg-teal-950 px-3 py-1.5 rounded-lg border border-teal-700 hover:text-teal-300">Greater Noida Home Therapy</a>
-            <a href="/ghaziabad/" className="bg-teal-950 px-3 py-1.5 rounded-lg border border-teal-700 hover:text-teal-300">Ghaziabad Home Therapy</a>
+            <a href="/locations/" className="bg-teal-950 px-3 py-1.5 rounded-lg border border-teal-500 text-teal-300 hover:text-white font-bold">All Locations Directory</a>
+            <a href="/physiotherapy-at-home-sector-50-noida/" className="bg-teal-950 px-3 py-1.5 rounded-lg border border-teal-700 hover:text-teal-300">Sector 50, Noida</a>
+            <a href="/physiotherapy-at-home-sector-75-noida/" className="bg-teal-950 px-3 py-1.5 rounded-lg border border-teal-700 hover:text-teal-300">Sector 75, Noida</a>
+            <a href="/physiotherapy-at-home-sector-93a-noida/" className="bg-teal-950 px-3 py-1.5 rounded-lg border border-teal-700 hover:text-teal-300">Sector 93A, Noida</a>
+            <a href="/physiotherapy-at-home-sector-104-noida/" className="bg-teal-950 px-3 py-1.5 rounded-lg border border-teal-700 hover:text-teal-300">Sector 104, Noida</a>
+            <a href="/physiotherapy-at-home-sector-137-noida/" className="bg-teal-950 px-3 py-1.5 rounded-lg border border-teal-700 hover:text-teal-300">Sector 137, Noida</a>
+            <a href="/noida/" className="bg-teal-950 px-3 py-1.5 rounded-lg border border-teal-700 hover:text-teal-300">Noida (All Sectors)</a>
+            <a href="/greater-noida/" className="bg-teal-950 px-3 py-1.5 rounded-lg border border-teal-700 hover:text-teal-300">Greater Noida</a>
+            <a href="/ghaziabad/" className="bg-teal-950 px-3 py-1.5 rounded-lg border border-teal-700 hover:text-teal-300">Ghaziabad</a>
           </div>
         </div>
 

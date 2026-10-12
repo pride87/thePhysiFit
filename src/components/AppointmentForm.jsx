@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import WhatsAppModal from './WhatsAppModal';
 import { User, MapPin, Calendar, Clock, MessageSquare, CheckCircle2, ShieldCheck, AlertCircle } from 'lucide-react';
 
-export default function AppointmentForm() {
+export default function AppointmentForm({ defaultArea = '', defaultCity = 'Noida' } = {}) {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
     age: '',
     gender: 'Male',
     address: '',
-    area: '',
-    city: 'Noida',
+    area: defaultArea,
+    city: defaultCity,
     pincode: '',
     preferredDate: '',
     preferredTime: 'Morning (9 AM - 12 PM)',

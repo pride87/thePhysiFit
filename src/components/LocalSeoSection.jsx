@@ -108,6 +108,82 @@ export default function LocalSeoSection() {
           ))}
         </div>
 
+        {/* Noida Sector Highlights Grid */}
+        <div className="mt-12 bg-slate-800/60 border border-slate-700/80 rounded-2xl p-6 sm:p-8">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-700/80 pb-4 mb-6">
+            <div>
+              <span className="text-xs font-bold uppercase tracking-wider text-teal-400">Doorstep Sector Coverage</span>
+              <h3 className="text-xl sm:text-2xl font-bold text-white mt-1">
+                Home Physiotherapy in Major Noida Sectors
+              </h3>
+            </div>
+            <a
+              href="/locations/"
+              className="text-xs sm:text-sm font-bold text-teal-300 hover:text-teal-200 flex items-center space-x-1.5 self-start sm:self-auto bg-slate-900/80 px-4 py-2 rounded-xl border border-slate-700 hover:border-teal-500 transition-all"
+            >
+              <span>Explore All Locations Directory</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </a>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5">
+            <a
+              href="/physiotherapy-at-home-sector-50-noida/"
+              className="bg-slate-900/80 hover:bg-teal-950/80 p-4 rounded-xl border border-slate-700 hover:border-teal-500 transition-all group block"
+            >
+              <div className="text-teal-400 font-bold text-sm group-hover:text-teal-300 mb-1 flex items-center justify-between">
+                <span>Sector 50</span>
+                <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+              </div>
+              <p className="text-xs text-slate-400 line-clamp-2">Alok Vihar, Mahagun Maestro, Amrapali & Central Park</p>
+            </a>
+
+            <a
+              href="/physiotherapy-at-home-sector-75-noida/"
+              className="bg-slate-900/80 hover:bg-teal-950/80 p-4 rounded-xl border border-slate-700 hover:border-teal-500 transition-all group block"
+            >
+              <div className="text-teal-400 font-bold text-sm group-hover:text-teal-300 mb-1 flex items-center justify-between">
+                <span>Sector 75</span>
+                <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+              </div>
+              <p className="text-xs text-slate-400 line-clamp-2">Golf City, Apex Athena, Maxblis & Pan Oasis</p>
+            </a>
+
+            <a
+              href="/physiotherapy-at-home-sector-93a-noida/"
+              className="bg-slate-900/80 hover:bg-teal-950/80 p-4 rounded-xl border border-slate-700 hover:border-teal-500 transition-all group block"
+            >
+              <div className="text-teal-400 font-bold text-sm group-hover:text-teal-300 mb-1 flex items-center justify-between">
+                <span>Sector 93A</span>
+                <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+              </div>
+              <p className="text-xs text-slate-400 line-clamp-2">ATS Greens Village, Eldeco Utopia & Grand Omaxe</p>
+            </a>
+
+            <a
+              href="/physiotherapy-at-home-sector-104-noida/"
+              className="bg-slate-900/80 hover:bg-teal-950/80 p-4 rounded-xl border border-slate-700 hover:border-teal-500 transition-all group block"
+            >
+              <div className="text-teal-400 font-bold text-sm group-hover:text-teal-300 mb-1 flex items-center justify-between">
+                <span>Sector 104</span>
+                <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+              </div>
+              <p className="text-xs text-slate-400 line-clamp-2">Hazipur, Lotus 300 & ATS One Hamlet cluster</p>
+            </a>
+
+            <a
+              href="/physiotherapy-at-home-sector-137-noida/"
+              className="bg-slate-900/80 hover:bg-teal-950/80 p-4 rounded-xl border border-slate-700 hover:border-teal-500 transition-all group block"
+            >
+              <div className="text-teal-400 font-bold text-sm group-hover:text-teal-300 mb-1 flex items-center justify-between">
+                <span>Sector 137</span>
+                <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+              </div>
+              <p className="text-xs text-slate-400 line-clamp-2">Paras Tierea, Purvanchal, Gulshan & Exotica</p>
+            </a>
+          </div>
+        </div>
+
         {/* Local Search Intent Highlights Box */}
         <div className="mt-14 bg-slate-800/90 border border-slate-700 rounded-3xl p-8 sm:p-10 shadow-xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">

@@ -318,6 +318,29 @@ export default function LocationPages({ locationKey, onNavigateBack }) {
           </div>
         </div>
 
+        {/* Noida Sector Coverage Links */}
+        <div className="bg-white rounded-2xl p-8 border border-slate-200/80 shadow-sm space-y-4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-3">
+            <div>
+              <h3 className="text-xl font-bold text-slate-900">Explore Specific Noida Sector Pages</h3>
+              <p className="text-xs text-slate-500">Dedicated local home physiotherapy information by sector</p>
+            </div>
+            <a
+              href="/locations/"
+              className="text-xs font-bold text-teal-700 hover:text-teal-900 underline"
+            >
+              All Locations Directory →
+            </a>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2.5 pt-1">
+            <a href="/physiotherapy-at-home-sector-50-noida/" className="bg-slate-50 hover:bg-teal-50 p-3 rounded-xl border border-slate-200 text-xs font-semibold text-slate-800 text-center">Sector 50</a>
+            <a href="/physiotherapy-at-home-sector-75-noida/" className="bg-slate-50 hover:bg-teal-50 p-3 rounded-xl border border-slate-200 text-xs font-semibold text-slate-800 text-center">Sector 75</a>
+            <a href="/physiotherapy-at-home-sector-93a-noida/" className="bg-slate-50 hover:bg-teal-50 p-3 rounded-xl border border-slate-200 text-xs font-semibold text-slate-800 text-center">Sector 93A</a>
+            <a href="/physiotherapy-at-home-sector-104-noida/" className="bg-slate-50 hover:bg-teal-50 p-3 rounded-xl border border-slate-200 text-xs font-semibold text-slate-800 text-center">Sector 104</a>
+            <a href="/physiotherapy-at-home-sector-137-noida/" className="bg-slate-50 hover:bg-teal-50 p-3 rounded-xl border border-slate-200 text-xs font-semibold text-slate-800 text-center">Sector 137</a>
+          </div>
+        </div>
+
         {/* FAQs */}
         <div className="bg-white rounded-2xl p-8 border border-slate-200/80 shadow-sm space-y-6">
           <div className="flex items-center space-x-3 text-slate-900 border-b border-slate-100 pb-3">

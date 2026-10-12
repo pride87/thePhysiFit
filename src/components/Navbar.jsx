@@ -20,7 +20,7 @@ export default function Navbar() {
     { name: 'Home', href: '#hero' },
     { name: 'About', href: '#about' },
     { name: 'Services', href: '#services' },
-    { name: 'Locations', href: '#local-seo-services' },
+    { name: 'Locations', href: '/locations/' },
     { name: 'Conditions', href: '#conditions' },
     { name: 'Home Therapy', href: '#we-come-to-you' },
     { name: 'Pricing', href: '#pricing' },
@@ -29,8 +29,13 @@ export default function Navbar() {
   ];
 
   const handleScrollTo = (e, targetId) => {
-    e.preventDefault();
     setMobileMenuOpen(false);
+    if (targetId.startsWith('/')) {
+      e.preventDefault();
+      navigate(targetId);
+      return;
+    }
+    e.preventDefault();
     if (location.pathname !== '/') {
       navigate('/');
       setTimeout(() => {

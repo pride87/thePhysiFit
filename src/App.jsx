@@ -21,6 +21,8 @@ import Footer from './components/Footer';
 import LocationPages from './components/LocationPages';
 import ServicePages from './components/ServicePages';
 import MobileStickyCallBar from './components/MobileStickyCallBar';
+import SectorLandingPage from './components/SectorLandingPage';
+import LocationsDirectory from './components/LocationsDirectory';
 
 function HomePage() {
   return (
@@ -77,6 +79,30 @@ function ServiceRouteWrapper({ serviceKey }) {
   );
 }
 
+function SectorRouteWrapper({ sectorKey }) {
+  return (
+    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-teal-500 selection:text-white pb-16">
+      <Navbar />
+      <SectorLandingPage sectorKey={sectorKey} />
+      <Footer />
+      <FloatingWhatsApp />
+      <MobileStickyCallBar />
+    </div>
+  );
+}
+
+function LocationsRouteWrapper() {
+  return (
+    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-teal-500 selection:text-white pb-16">
+      <Navbar />
+      <LocationsDirectory />
+      <Footer />
+      <FloatingWhatsApp />
+      <MobileStickyCallBar />
+    </div>
+  );
+}
+
 function NotFoundPage() {
   const navigate = useNavigate();
   return (
@@ -126,6 +152,24 @@ export default function App() {
       <Route path="/" element={<HomePage />} />
 
       {/* Location Pages */}
+      <Route path="/locations" element={<LocationsRouteWrapper />} />
+      <Route path="/locations/" element={<LocationsRouteWrapper />} />
+
+      <Route path="/physiotherapy-at-home-sector-50-noida" element={<SectorRouteWrapper sectorKey="sector-50" />} />
+      <Route path="/physiotherapy-at-home-sector-50-noida/" element={<SectorRouteWrapper sectorKey="sector-50" />} />
+
+      <Route path="/physiotherapy-at-home-sector-75-noida" element={<SectorRouteWrapper sectorKey="sector-75" />} />
+      <Route path="/physiotherapy-at-home-sector-75-noida/" element={<SectorRouteWrapper sectorKey="sector-75" />} />
+
+      <Route path="/physiotherapy-at-home-sector-93a-noida" element={<SectorRouteWrapper sectorKey="sector-93a" />} />
+      <Route path="/physiotherapy-at-home-sector-93a-noida/" element={<SectorRouteWrapper sectorKey="sector-93a" />} />
+
+      <Route path="/physiotherapy-at-home-sector-104-noida" element={<SectorRouteWrapper sectorKey="sector-104" />} />
+      <Route path="/physiotherapy-at-home-sector-104-noida/" element={<SectorRouteWrapper sectorKey="sector-104" />} />
+
+      <Route path="/physiotherapy-at-home-sector-137-noida" element={<SectorRouteWrapper sectorKey="sector-137" />} />
+      <Route path="/physiotherapy-at-home-sector-137-noida/" element={<SectorRouteWrapper sectorKey="sector-137" />} />
+
       <Route path="/noida" element={<LocationRouteWrapper locationKey="noida" />} />
       <Route path="/noida/" element={<LocationRouteWrapper locationKey="noida" />} />
 
