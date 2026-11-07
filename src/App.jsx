@@ -26,6 +26,7 @@ import ServicePages from './components/ServicePages';
 import MobileStickyCallBar from './components/MobileStickyCallBar';
 import SectorLandingPage from './components/SectorLandingPage';
 import LocationsDirectory from './components/LocationsDirectory';
+import BackgroundMusic from './components/BackgroundMusic';
 
 // Homepage
 function HomePage() {
@@ -200,7 +201,9 @@ export default function App() {
         size={[15, 30]}
         opacity={0.7}
         zIndex={9999}
+        
       />
+      <BackgroundMusic/>
 
       <Routes>
         {/* Homepage */}
