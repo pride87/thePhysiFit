@@ -1,32 +1,30 @@
+import React, { useEffect } from "react";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 
-import React, { useEffect } from 'react';
-import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
-import { FallingLeaves } from 'falling-leaves/react';
 
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import WeComeToYou from './components/WeComeToYou';
-import Services from './components/Services';
-import LocalSeoSection from './components/LocalSeoSection';
-import Conditions from './components/Conditions';
-import WhoCanBenefit from './components/WhoCanBenefit';
-import HowItWorks from './components/HowItWorks';
-import Pricing from './components/Pricing';
-import AppointmentForm from './components/AppointmentForm';
-import PromotionalBanners from './components/PromotionalBanners';
-import WhyChooseUs from './components/WhyChooseUs';
-import About from './components/About';
-import Testimonials from './components/Testimonials';
-import FAQ from './components/FAQ';
-import Contact from './components/Contact';
-import FloatingWhatsApp from './components/FloatingWhatsApp';
-import Footer from './components/Footer';
-import LocationPages from './components/LocationPages';
-import ServicePages from './components/ServicePages';
-import MobileStickyCallBar from './components/MobileStickyCallBar';
-import SectorLandingPage from './components/SectorLandingPage';
-import LocationsDirectory from './components/LocationsDirectory';
-import BackgroundMusic from './components/BackgroundMusic';
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import WeComeToYou from "./components/WeComeToYou";
+import Services from "./components/Services";
+import LocalSeoSection from "./components/LocalSeoSection";
+import Conditions from "./components/Conditions";
+import WhoCanBenefit from "./components/WhoCanBenefit";
+import HowItWorks from "./components/HowItWorks";
+import Pricing from "./components/Pricing";
+import AppointmentForm from "./components/AppointmentForm";
+import PromotionalBanners from "./components/PromotionalBanners";
+import WhyChooseUs from "./components/WhyChooseUs";
+import About from "./components/About";
+import Testimonials from "./components/Testimonials";
+import FAQ from "./components/FAQ";
+import Contact from "./components/Contact";
+import FloatingWhatsApp from "./components/FloatingWhatsApp";
+import Footer from "./components/Footer";
+import LocationPages from "./components/LocationPages";
+import ServicePages from "./components/ServicePages";
+import MobileStickyCallBar from "./components/MobileStickyCallBar";
+import SectorLandingPage from "./components/SectorLandingPage";
+import LocationsDirectory from "./components/LocationsDirectory";
 
 // Homepage
 function HomePage() {
@@ -67,7 +65,7 @@ function LocationRouteWrapper({ locationKey }) {
       <Navbar />
       <LocationPages
         locationKey={locationKey}
-        onNavigateBack={() => navigate('/')}
+        onNavigateBack={() => navigate("/")}
       />
       <Footer />
       <FloatingWhatsApp />
@@ -85,7 +83,7 @@ function ServiceRouteWrapper({ serviceKey }) {
       <Navbar />
       <ServicePages
         serviceKey={serviceKey}
-        onNavigateBack={() => navigate('/')}
+        onNavigateBack={() => navigate("/")}
       />
       <Footer />
       <FloatingWhatsApp />
@@ -138,13 +136,13 @@ function NotFoundPage() {
         </h1>
 
         <p className="text-slate-600 text-sm">
-          The page or service you are looking for is unavailable.
-          Explore our home physiotherapy services across Noida,
-          Greater Noida, and Ghaziabad.
+          The page or service you are looking for is unavailable. Explore our
+          home physiotherapy services across Noida, Greater Noida, and
+          Ghaziabad.
         </p>
 
         <button
-          onClick={() => navigate('/')}
+          onClick={() => navigate("/")}
           className="inline-block bg-teal-600 hover:bg-teal-700 text-white font-bold px-6 py-3 rounded-xl shadow transition-all text-sm cursor-pointer"
         >
           Return to Homepage
@@ -163,48 +161,29 @@ export default function App() {
 
   // Existing SEO Logic
   useEffect(() => {
-    if (location.pathname === '/') {
+    if (location.pathname === "/") {
       document.title =
-        'ThePhysiFit | Home Physiotherapy in Noida, Greater Noida & Ghaziabad';
+        "ThePhysiFit | Home Physiotherapy in Noida, Greater Noida & Ghaziabad";
 
-      const metaDesc = document.querySelector(
-        'meta[name="description"]'
-      );
+      const metaDesc = document.querySelector('meta[name="description"]');
 
       if (metaDesc) {
         metaDesc.setAttribute(
-          'content',
-          'ThePhysiFit provides professional home physiotherapy in Noida, Greater Noida and Ghaziabad. Book a home visit for back pain, neck pain, knee pain, sports injuries and rehabilitation. Call 7065411520.'
+          "content",
+          "ThePhysiFit provides professional home physiotherapy in Noida, Greater Noida and Ghaziabad. Book a home visit for back pain, neck pain, knee pain, sports injuries and rehabilitation. Call 7065411520.",
         );
       }
 
-      const canonicalTag = document.querySelector(
-        'link[rel="canonical"]'
-      );
+      const canonicalTag = document.querySelector('link[rel="canonical"]');
 
       if (canonicalTag) {
-        canonicalTag.setAttribute(
-          'href',
-          'https://thephysifit.com/'
-        );
+        canonicalTag.setAttribute("href", "https://thephysifit.com/");
       }
     }
   }, [location.pathname]);
 
   return (
     <>
-      {/* GLOBAL FALLING LEAVES ANIMATION */}
-      <FallingLeaves
-        fullScreen
-        count={30}
-        speed={[0.8, 2]}
-        size={[15, 30]}
-        opacity={0.7}
-        zIndex={9999}
-        
-      />
-      <BackgroundMusic/>
-
       <Routes>
         {/* Homepage */}
         <Route path="/" element={<HomePage />} />
@@ -214,57 +193,175 @@ export default function App() {
         <Route path="/locations/" element={<LocationsRouteWrapper />} />
 
         {/* Sector Pages */}
-        <Route path="/physiotherapy-at-home-sector-50-noida" element={<SectorRouteWrapper sectorKey="sector-50" />} />
-        <Route path="/physiotherapy-at-home-sector-50-noida/" element={<SectorRouteWrapper sectorKey="sector-50" />} />
+        <Route
+          path="/physiotherapy-at-home-sector-50-noida"
+          element={<SectorRouteWrapper sectorKey="sector-50" />}
+        />
+        <Route
+          path="/physiotherapy-at-home-sector-50-noida/"
+          element={<SectorRouteWrapper sectorKey="sector-50" />}
+        />
 
-        <Route path="/physiotherapy-at-home-sector-75-noida" element={<SectorRouteWrapper sectorKey="sector-75" />} />
-        <Route path="/physiotherapy-at-home-sector-75-noida/" element={<SectorRouteWrapper sectorKey="sector-75" />} />
+        <Route
+          path="/physiotherapy-at-home-sector-75-noida"
+          element={<SectorRouteWrapper sectorKey="sector-75" />}
+        />
+        <Route
+          path="/physiotherapy-at-home-sector-75-noida/"
+          element={<SectorRouteWrapper sectorKey="sector-75" />}
+        />
 
-        <Route path="/physiotherapy-at-home-sector-93a-noida" element={<SectorRouteWrapper sectorKey="sector-93a" />} />
-        <Route path="/physiotherapy-at-home-sector-93a-noida/" element={<SectorRouteWrapper sectorKey="sector-93a" />} />
+        <Route
+          path="/physiotherapy-at-home-sector-93a-noida"
+          element={<SectorRouteWrapper sectorKey="sector-93a" />}
+        />
+        <Route
+          path="/physiotherapy-at-home-sector-93a-noida/"
+          element={<SectorRouteWrapper sectorKey="sector-93a" />}
+        />
 
-        <Route path="/physiotherapy-at-home-sector-104-noida" element={<SectorRouteWrapper sectorKey="sector-104" />} />
-        <Route path="/physiotherapy-at-home-sector-104-noida/" element={<SectorRouteWrapper sectorKey="sector-104" />} />
+        <Route
+          path="/physiotherapy-at-home-sector-104-noida"
+          element={<SectorRouteWrapper sectorKey="sector-104" />}
+        />
+        <Route
+          path="/physiotherapy-at-home-sector-104-noida/"
+          element={<SectorRouteWrapper sectorKey="sector-104" />}
+        />
 
-        <Route path="/physiotherapy-at-home-sector-137-noida" element={<SectorRouteWrapper sectorKey="sector-137" />} />
-        <Route path="/physiotherapy-at-home-sector-137-noida/" element={<SectorRouteWrapper sectorKey="sector-137" />} />
+        <Route
+          path="/physiotherapy-at-home-sector-137-noida"
+          element={<SectorRouteWrapper sectorKey="sector-137" />}
+        />
+        <Route
+          path="/physiotherapy-at-home-sector-137-noida/"
+          element={<SectorRouteWrapper sectorKey="sector-137" />}
+        />
 
-        <Route path="/noida" element={<LocationRouteWrapper locationKey="noida" />} />
-        <Route path="/noida/" element={<LocationRouteWrapper locationKey="noida" />} />
+        <Route
+          path="/noida"
+          element={<LocationRouteWrapper locationKey="noida" />}
+        />
+        <Route
+          path="/noida/"
+          element={<LocationRouteWrapper locationKey="noida" />}
+        />
 
-        <Route path="/noida/ghaziabad" element={<LocationRouteWrapper locationKey="noida-ghaziabad" />} />
-        <Route path="/noida/ghaziabad/" element={<LocationRouteWrapper locationKey="noida-ghaziabad" />} />
+        <Route
+          path="/noida/ghaziabad"
+          element={<LocationRouteWrapper locationKey="noida-ghaziabad" />}
+        />
+        <Route
+          path="/noida/ghaziabad/"
+          element={<LocationRouteWrapper locationKey="noida-ghaziabad" />}
+        />
 
-        <Route path="/greater-noida" element={<LocationRouteWrapper locationKey="greater-noida" />} />
-        <Route path="/greater-noida/" element={<LocationRouteWrapper locationKey="greater-noida" />} />
+        <Route
+          path="/greater-noida"
+          element={<LocationRouteWrapper locationKey="greater-noida" />}
+        />
+        <Route
+          path="/greater-noida/"
+          element={<LocationRouteWrapper locationKey="greater-noida" />}
+        />
 
-        <Route path="/ghaziabad" element={<LocationRouteWrapper locationKey="ghaziabad" />} />
-        <Route path="/ghaziabad/" element={<LocationRouteWrapper locationKey="ghaziabad" />} />
+        <Route
+          path="/ghaziabad"
+          element={<LocationRouteWrapper locationKey="ghaziabad" />}
+        />
+        <Route
+          path="/ghaziabad/"
+          element={<LocationRouteWrapper locationKey="ghaziabad" />}
+        />
 
         {/* Service Pages */}
-        <Route path="/physiotherapy-at-home" element={<ServiceRouteWrapper serviceKey="physiotherapy-at-home" />} />
-        <Route path="/physiotherapy-at-home/" element={<ServiceRouteWrapper serviceKey="physiotherapy-at-home" />} />
+        <Route
+          path="/physiotherapy-at-home"
+          element={<ServiceRouteWrapper serviceKey="physiotherapy-at-home" />}
+        />
+        <Route
+          path="/physiotherapy-at-home/"
+          element={<ServiceRouteWrapper serviceKey="physiotherapy-at-home" />}
+        />
 
-        <Route path="/back-pain-physiotherapy" element={<ServiceRouteWrapper serviceKey="back-pain-physiotherapy" />} />
-        <Route path="/back-pain-physiotherapy/" element={<ServiceRouteWrapper serviceKey="back-pain-physiotherapy" />} />
+        <Route
+          path="/back-pain-physiotherapy"
+          element={<ServiceRouteWrapper serviceKey="back-pain-physiotherapy" />}
+        />
+        <Route
+          path="/back-pain-physiotherapy/"
+          element={<ServiceRouteWrapper serviceKey="back-pain-physiotherapy" />}
+        />
 
-        <Route path="/neck-pain-physiotherapy" element={<ServiceRouteWrapper serviceKey="neck-pain-physiotherapy" />} />
-        <Route path="/neck-pain-physiotherapy/" element={<ServiceRouteWrapper serviceKey="neck-pain-physiotherapy" />} />
+        <Route
+          path="/neck-pain-physiotherapy"
+          element={<ServiceRouteWrapper serviceKey="neck-pain-physiotherapy" />}
+        />
+        <Route
+          path="/neck-pain-physiotherapy/"
+          element={<ServiceRouteWrapper serviceKey="neck-pain-physiotherapy" />}
+        />
 
-        <Route path="/knee-pain-physiotherapy" element={<ServiceRouteWrapper serviceKey="knee-pain-physiotherapy" />} />
-        <Route path="/knee-pain-physiotherapy/" element={<ServiceRouteWrapper serviceKey="knee-pain-physiotherapy" />} />
+        <Route
+          path="/knee-pain-physiotherapy"
+          element={<ServiceRouteWrapper serviceKey="knee-pain-physiotherapy" />}
+        />
+        <Route
+          path="/knee-pain-physiotherapy/"
+          element={<ServiceRouteWrapper serviceKey="knee-pain-physiotherapy" />}
+        />
 
-        <Route path="/sports-injury-physiotherapy" element={<ServiceRouteWrapper serviceKey="sports-injury-physiotherapy" />} />
-        <Route path="/sports-injury-physiotherapy/" element={<ServiceRouteWrapper serviceKey="sports-injury-physiotherapy" />} />
+        <Route
+          path="/sports-injury-physiotherapy"
+          element={
+            <ServiceRouteWrapper serviceKey="sports-injury-physiotherapy" />
+          }
+        />
+        <Route
+          path="/sports-injury-physiotherapy/"
+          element={
+            <ServiceRouteWrapper serviceKey="sports-injury-physiotherapy" />
+          }
+        />
 
-        <Route path="/post-surgery-rehabilitation" element={<ServiceRouteWrapper serviceKey="post-surgery-rehabilitation" />} />
-        <Route path="/post-surgery-rehabilitation/" element={<ServiceRouteWrapper serviceKey="post-surgery-rehabilitation" />} />
+        <Route
+          path="/post-surgery-rehabilitation"
+          element={
+            <ServiceRouteWrapper serviceKey="post-surgery-rehabilitation" />
+          }
+        />
+        <Route
+          path="/post-surgery-rehabilitation/"
+          element={
+            <ServiceRouteWrapper serviceKey="post-surgery-rehabilitation" />
+          }
+        />
 
-        <Route path="/elderly-mobility-physiotherapy" element={<ServiceRouteWrapper serviceKey="elderly-mobility-physiotherapy" />} />
-        <Route path="/elderly-mobility-physiotherapy/" element={<ServiceRouteWrapper serviceKey="elderly-mobility-physiotherapy" />} />
+        <Route
+          path="/elderly-mobility-physiotherapy"
+          element={
+            <ServiceRouteWrapper serviceKey="elderly-mobility-physiotherapy" />
+          }
+        />
+        <Route
+          path="/elderly-mobility-physiotherapy/"
+          element={
+            <ServiceRouteWrapper serviceKey="elderly-mobility-physiotherapy" />
+          }
+        />
 
-        <Route path="/home-visit-physiotherapy" element={<ServiceRouteWrapper serviceKey="home-visit-physiotherapy" />} />
-        <Route path="/home-visit-physiotherapy/" element={<ServiceRouteWrapper serviceKey="home-visit-physiotherapy" />} />
+        <Route
+          path="/home-visit-physiotherapy"
+          element={
+            <ServiceRouteWrapper serviceKey="home-visit-physiotherapy" />
+          }
+        />
+        <Route
+          path="/home-visit-physiotherapy/"
+          element={
+            <ServiceRouteWrapper serviceKey="home-visit-physiotherapy" />
+          }
+        />
 
         {/* 404 Fallback */}
         <Route path="*" element={<NotFoundPage />} />
